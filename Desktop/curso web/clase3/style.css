@@ -1,0 +1,39 @@
+/* Estilos para el formulario */
+body{
+  background-color: azure;
+}
+.imagen {
+  padding-left: 43%;
+  box-sizing: border-box;
+  /* margin: 0 auto; */
+}
+h1 {
+  color: #45a049;
+  text-align: center;
+}
+
+.contenedor-form {
+  margin: 0 auto;
+  text-align: center;
+  width: 5%;
+  padding: 10px;
+  border-radius: 5px;
+  border: doble;
+  border: #d22b3e solid;
+  font-family: cursive;
+  font-size: 10px;
+}
+
+.boton-enviar {
+  background-color: #4caf50;
+  color: white;
+  font-size: 20px;
+  padding: 5px 5px;
+  border-radius: 5px;
+  border: doble;
+  cursor: pointer;
+}
+
+.boton-enviar:hover {
+  background-color: #d22b3e;
+}

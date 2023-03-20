@@ -1,0 +1,14 @@
+
+.contenedor {
+
+    display: grid;
+    grid-template-columns: 1f 1f 1f;
+    grid-template-rows: 100px 200px 100px;
+}   gap: 15px;
+.caja {
+    border-color: black;
+    background-color: #822222;
+    padding: 10px;
+    color: aqua;
+    text-align: center;
+}

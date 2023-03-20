@@ -1,0 +1,21 @@
+body{
+
+    background-color:#F0F2F5;
+}
+h1{
+    color: aqua;
+    text-align: center;
+}
+.contenedor-face{
+    width: 50%;
+    margin: auto;
+    border-radius: 5%;
+    border-color: aqua solid;
+}
+
+.contenedor-form{
+    width: 40%;
+    border-radius: 5%;
+    margin: 0% auto;
+    
+}

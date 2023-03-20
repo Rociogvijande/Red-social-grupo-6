@@ -1,0 +1,179 @@
+
+
+/* .contenedor {
+    /* margin: 5px; */
+    background-color: bisque;
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgb(15, 15, 16);
+    /* display:inline-flexbox; */
+} */
+
+/* .contenedor1 {
+    /* margin: 5px; */
+    /* padding: 10px; */
+    background-color: blueviolet;
+    width: 32.5%;
+    height: 50%;
+    border: 1px solid rgb(15, 15, 16);
+    /* display: inline-block; */
+} */
+
+/* .contenedor2 {
+    /* margin: 10px; */
+    /* padding: 5px; */
+    background-color: rgb(163, 239, 224);
+    width: 32.5%;
+    height: 50%;
+    border: 1px solid rgb(15, 15, 16);
+    /* display: inline-block; */
+} */
+
+
+.iconoc{
+    /* margin: 30px */
+    /* height: 25px; */
+    width: 25px;
+    /* position: absolute; */
+    /* right: 70px; */
+}
+.iconom{
+    margin: 30px
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    right: 120px;
+}
+.iconor{
+    margin: 30px
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    right: 170px;
+}
+.imagenl{
+    margin: 30px;
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    right: 30px;
+}
+.logo {
+    margin: 5px;
+    height: 80px;
+    width: 100px;
+    position: absolute;
+    left: 10px;
+    /* margin: 20px; */
+    /* display: inline-block; */
+    /* defino un contenedor padre de tipo flex */
+        /* así manejaremos mejor a sus elementos hijos */
+        /* display: flex; */
+        /* por defecto, si no decimos nada, el flex-direction es row (fila) */
+           /* usamos flex-wrap: wrap 
+               si queremos que los items ocupen más de una fila/columna */
+       /* flex-direction: row; */
+       /* centra el contenido */
+       /* justify-content:right; */
+
+    /* border-radius: 100%; */
+    /* display:inline-flexbox; */
+    /* display:flex; */
+
+}
+h1.titulo{
+    font-size: xx-large;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: italic;
+    /* font-display:inherit; */
+    color: blue;
+    position: absolute;
+    left: 120px;
+    /* font-weight: 700; */
+    /* margin: 1px; */
+    /* width: 150px; */
+    /* height: 20 px; */
+    /* border: 1px solid black; */
+    /* display: inline-block; */
+    /* margin: rem auto; */
+    /* display:inline-flexbox; */
+    /* display:flex; */
+
+}
+.busqueda{
+    margin: 30px;
+    border-radius: 10%;
+    position: absolute;
+    left: 250px;
+}
+
+.logo:active {
+    /* height: 200px;
+    width: 200px;
+    /* display: inline-block; */
+
+    /* border-radius: 100%; */
+} */
+
+
+
+/* .caja1 {
+    /* margin: 4px; */
+    /* padding: 10px; */
+    border: 2px solid black;
+    width: 30px;
+    height: 150px;
+} */
+
+/* .caja2 {
+    border: 2px solid black;
+    width: 100%;
+    height: 150px;
+    /* margin: 2px; */
+}
+
+
+/* .caja3 {
+    border: 2px solid black;
+    /* padding: 1px; */
+    width: 100%;
+    height: 150px;
+    /* margin: 2px; */
+    /* display: inline-block;  */
+} */
+
+/* .caja4 {
+border: 2px solid black;
+/* padding: 1px; */
+width: 100%;
+height: 150px;
+/* margin: 1px; */
+/* display: inline-block; */
+} */
+
+/* .caja5 {
+    border: 2px solid black;
+    /* padding: 1px; */
+    width: 100%;
+    height: 150px;
+    /* margin: 1px; */
+    /* display: inline-block; */
+} */
+
+/* .caja6 {
+    border: 2px solid black;
+    /* padding: 1px; */
+    width: 100%;
+    height: 150px;
+    /* margin: 1px; */
+    display: inline-block;
+} */
+
+/* .caja7 {
+    border: 2px solid black;
+    /* padding: 1px; */
+    width: 100%;
+    height: 40px;
+    /* margin: 1px; */
+    /* display: inline-block; */
+} */ */
