@@ -16,6 +16,6 @@ cursosRealizados = prompt('Introduzca el numeoro de cursos realizadoso: ');
 fechaNacimiento = new.Date(fechaNacimiento);
 //comprobamos si el año de fechaNacimiento es menor del año 2000
 
-if  getFullYear(fechaNacimiento)< 2000{
+if getFullYear(fechaNacimiento)< 2000 {
     alert('Estas seguro que eres un programador Junior?');
 }
