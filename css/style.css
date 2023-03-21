@@ -1,33 +1,70 @@
-.container{
-    margin-top: 10%;
+@media only screen and (max-width: 768px) {
+
+    .container {
+        background-color: #ae1111;
+        margin-top: 80%;
     }
 
-        /* Cambio dimensiones logo ocupando el ancho del formulario */
-.logo img{
-    margin:auto;
+}
+
+@media only screen and (max-width: 340px) {
+
+    .container {
+        background-color: #23ae11;
+        margin-top: 10%;
+    }
+
+}
+
+@media only screen and (max-width: 340px) {
+
+    .logo {
+        background-color: #ae117a;
+        margin-top: 10%;
+    }
+
+}
+
+@media only screen and (max-width: 340px) {
+
+    .boton_busqueda {
+        background-color: #ae117a;
+        margin-top: 10%;
+    }
+
+}
+}
+
+.container {
+    margin-top: 10%;
+}
+
+/* Cambio dimensiones logo ocupando el ancho del formulario */
+.logo img {
+    margin: auto;
     margin-bottom: 5%;
-    justify-content:center;
+    justify-content: center;
     width: 100%;
     margin-bottom: 20px;
 }
-        
+
 /* Feed y cabecera Xurde */
-*{
+* {
     margin: 0px;
     padding: 0px;
     /* max-width: 99,4%; */
 }
 
 
-.container-fluid{
+.container-fluid {
     position: fixed;
     top: 0px;
     left: 0px;
     background-color: whitesmoke;
     border-bottom: 10px solid white;
-    }
-    
-.boton_busqueda{
+}
+
+.boton_busqueda {
     background: #428bca;
     border-color: #357ebd;
     color: white;
@@ -39,28 +76,28 @@
     position: relative;
 }
 
-.boton_busqueda:hover{
+.boton_busqueda:hover {
     color: #428bca;
     background-color: whitesmoke;
 }
 
 
-.logo img{
-    margin:auto;
+.logo img {
+    margin: auto;
     margin-bottom: 5%;
-    justify-content:center;
+    justify-content: center;
     width: 100%;
     margin-bottom: 20px;
 }
-    
-    
-    /* Pruebas Xurde */
-    
-.navbar{
+
+
+/* Pruebas Xurde */
+
+.navbar {
     background-color: whitesmoke;
 }
-    
-.boton_busqueda{
+
+.boton_busqueda {
     background: #428bca;
     border-color: #357ebd;
     color: white;
@@ -71,37 +108,39 @@
     top: 12px;
     position: relative;
 }
-    .boton_busqueda:hover{
-        color: #428bca;
-        background-color: whitesmoke;
-    }
-    
-.navbar input{
+
+.boton_busqueda:hover {
+    color: #428bca;
+    background-color: whitesmoke;
+}
+
+.navbar input {
     top: 10px;
     position: relative;
-    }
-    
-.col_1{
+}
+
+.col_1 {
     display: inline-block;
     width: 20%;
     height: 600px;
     margin: auto;
 }
-.col_2{
-display: inline-block;
-width: 55%;
-height: 600px;
-margin: auto;
+
+.col_2 {
+    display: inline-block;
+    width: 55%;
+    height: 600px;
+    margin: auto;
 }
 
-.col_3{
-display: inline-block;
-width: 20%;
-height: 600px;
-margin: auto;
+.col_3 {
+    display: inline-block;
+    width: 20%;
+    height: 600px;
+    margin: auto;
 }
-    
-.sub_col{
+
+.sub_col {
     background-color: whitesmoke;
     border-radius: 15px;
     height: auto;
@@ -109,54 +148,55 @@ margin: auto;
     margin-bottom: 15px;
 }
 
-.sub_title{
+.sub_title {
     padding: 30px 30px 0px 30px;
     font-size: 16px;
     font-weight: bold;
     width: 100%;
 }
 
-.icon_request{
+.icon_request {
     height: 50px;
     margin-bottom: 10px;
     border-radius: 50%;
 }
 
-.friend_request{
-    margin: 30px;      
+.friend_request {
+    margin: 30px;
 }
-    
-.navbar-brand:hover{
+
+.navbar-brand:hover {
     background-color: white;
     border-radius: 200px;
 }
 
-.new_post{
-    margin: 30px;   
+.new_post {
+    margin: 30px;
 }
-    
-.form-control{
+
+.form-control {
     margin-bottom: 20px;
     height: fit-content;
 }
 
 /* Boton fixed */
-.ayuda{
+.ayuda {
     width: auto;
     position: fixed;
     bottom: 10%;
     right: 10%;
     box-shadow: 5px 5px 10px rgba(102, 102, 102, 0.8);
 }
+
 /* Panel amigos Xurde */
-.columna_amigos{
+.columna_amigos {
     display: inline-block;
     width: 75%;
     height: 600px;
     margin: auto;
 }
 
-.sub_col_amigos{
+.sub_col_amigos {
     display: flex;
     flex-wrap: wrap;
     align-content: space-between;
@@ -166,15 +206,16 @@ margin: auto;
     column-gap: 15px;
     padding: 15px;
 }
-.sub_col_amigos img{
+
+.sub_col_amigos img {
     width: 150px;
 }
 
-    
-    
+
+
 /* rocio - perfil */
-    
-.foto-perfil{
+
+.foto-perfil {
     width: 250px;
     padding: 30px;
     color: whitesmoke;
@@ -183,31 +224,29 @@ margin: auto;
     position: relative;
     margin-left: 20%;
 }
-    
-.contenedor-de-perfil{
-    display:flex; 
+
+.contenedor-de-perfil {
+    display: flex;
     width: 680px;
-    height: auto; 
-    background-color:cadetblue;
+    height: auto;
+    background-color: cadetblue;
     margin-left: 20%;
     position: relative;
     left: 200px;
     vertical-align: top;
 }
 
-.card-img-top{
+.card-img-top {
     width: 200px;
     padding: 15px;
 }
 
-.card{
+.card {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
 }
 
-.horario{
-    font-size:x-small;
+.horario {
+    font-size: x-small;
 }
-
-
