@@ -6,13 +6,13 @@ function NavBar() {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [showSearchBar, setShowSearchBar] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
-//Para el buscador
+  //Para el buscador
   const [searchValue, setSearchValue] = useState("");
 
   useEffect(() => {
     const handleResize = () => {
       setIsCollapsed(window.innerWidth <= 1000);
-      setShowSearchBar(window.innerWidth <= 630);
+      setShowSearchBar(window.innerWidth <= 637);
     };
 
     window.addEventListener("resize", handleResize);
@@ -30,22 +30,18 @@ function NavBar() {
   const handleLogout = () => {
     localStorage.clear();
   };
-//Para el buscador
+
+  //Para el buscador
   const handleSubmit = (event) => {
     event.preventDefault();
     if (searchValue) {
       // Redirigir a la página de búsqueda con el valor introducido
-      window.location.href = `/busqueda?alias=${searchValue}`;
+      window.location.href = `/busqueda?value=${searchValue}`;
     }
   };
 
   return (
-    <Navbar
-      bg="light"
-      expand="lg"
-      sticky="top"
-      collapseOnSelect={isCollapsed}
-    >
+    <Navbar bg="light" expand="lg" sticky="top" collapseOnSelect={isCollapsed}>
       <Navbar.Brand href="/feed">
         <img
           className="logo mx-3"
@@ -57,14 +53,15 @@ function NavBar() {
       {!showSearchBar && (
         <Form className="d-flex" onSubmit={handleSubmit}>
           <FormControl
+            className="mx-2"
             type="search"
-            placeholder="Search"
+            placeholder="Buscar usuarios"
             aria-label="Search"
             value={searchValue}
             onChange={(event) => setSearchValue(event.target.value)}
           />
           <Button variant="outline-primary" type="submit">
-            Search
+            Buscar
           </Button>
         </Form>
       )}

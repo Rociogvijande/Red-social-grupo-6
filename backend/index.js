@@ -280,12 +280,9 @@ app.get("/user/:user_id", async function (req, res) {
 // Todos los datos de usuarios registrados
 app.get("/allusers", async function (req, res) {
   try {
-    const users = await sequelize.query(
-      "SELECT * FROM users",
-      {
-        type: sequelize.QueryTypes.SELECT,
-      }
-    );
+    const users = await sequelize.query("SELECT * FROM users", {
+      type: sequelize.QueryTypes.SELECT,
+    });
     res.json(users);
   } catch (error) {
     console.error(error);
@@ -464,8 +461,8 @@ app.get("/friendpost/:user_id", async function (req, res) {
     const friend_post = await sequelize.query(
       `
       SELECT post.*, users.name, users.surname, users.alias, users.image,
-      COALESCE(SUM(post_likes.like_status), 0) AS like_count,
-        COALESCE((SELECT COALESCE(like_status, 0)
+          COALESCE(SUM(post_likes.like_status), 0) AS like_count,
+          COALESCE((SELECT COALESCE(like_status, 0)
                   FROM post_likes
                   WHERE post_likes.post_id = post.post_id AND post_likes.user_id = :user_id), 0) AS user_like_status
       FROM post
@@ -637,7 +634,8 @@ app.get("/feedbacks/:feedback_user_id", async function (req, res) {
       `SELECT feedback.*, users.name, users.surname, users.alias
       FROM feedback
       JOIN users ON feedback.user_id = users.user_id
-      WHERE feedback.feedback_user_id = :feedback_user_id`,
+      WHERE feedback.feedback_user_id = :feedback_user_id
+      `,
       {
         replacements: { feedback_user_id: req.params.feedback_user_id },
         type: sequelize.QueryTypes.SELECT,
@@ -650,15 +648,17 @@ app.get("/feedbacks/:feedback_user_id", async function (req, res) {
   }
 });
 
-
 //Crear un feedback
 app.post("/newfeedback", async function (req, res) {
-  const { user_id,feedback_user_id, feedback_text } = req.body; // Obtener los datos del nuevo post del cuerpo de la solicitud
+  const { user_id, feedback_user_id, feedback_text } = req.body; // Obtener los datos del nuevo post del cuerpo de la solicitud
   try {
-    await sequelize.query("INSERT INTO feedback (user_id, feedback_user_id, feedback_text) VALUES (?, ?, ?)", {
-      replacements: [user_id, feedback_user_id, feedback_text],
-      type: sequelize.QueryTypes.INSERT,
-    });
+    await sequelize.query(
+      "INSERT INTO feedback (user_id, feedback_user_id, feedback_text) VALUES (?, ?, ?)",
+      {
+        replacements: [user_id, feedback_user_id, feedback_text],
+        type: sequelize.QueryTypes.INSERT,
+      }
+    );
 
     res.json({ message: "Feedback aportado correctamente" });
     // Enviar una confirmación de éxito como respuesta
@@ -668,7 +668,7 @@ app.post("/newfeedback", async function (req, res) {
   }
 });
 
-// Comprobar si tiene feedback
+// Comprobar si ya has dejado una opinión al usuario que visitas
 app.get("/checkfeedback/:user_id/:feedback_user_id", async function (req, res) {
   const { user_id, feedback_user_id } = req.params;
 
@@ -696,26 +696,64 @@ app.get("/checkfeedback/:user_id/:feedback_user_id", async function (req, res) {
   }
 });
 
+// Mostrar/ocultar feedbacks
+app.put("/updatefeedback/:user_id/:feedback_user_id/:feedback_status_updated", async (req, res) => {
+    const { user_id, feedback_user_id, feedback_status_updated } = req.params;
 
+    try {
+      const updatedFeedback = await sequelize.query(
+        `UPDATE feedback
+        SET feedback_status = ?
+        WHERE user_id = ?
+        AND feedback_user_id = ?`,
+        {
+          replacements: [feedback_status_updated, user_id, feedback_user_id],
+          type: sequelize.QueryTypes.UPDATE,
+        }
+      );
 
-//Realizar una búsqueda por una coincidiencia parcial del alias
-app.get("/users/:alias", async (req, res) => {
+      if (updatedFeedback < 0) {
+        return res.status(404).json({ error: "Feedback no existente" });
+      } else {
+        return res.status(200).json({ message: "Feedback Actualizado" });
+      }
+    } catch (error) {
+      console.log(error);
+      return res.status(500).json({ error: "Internal server error" });
+    }
+  }
+);
+
+//Realizar una búsqueda por una coincidiencia parcial del texto
+app.get("/search/:searchValue", async function (req, res) {
+  const { searchValue } = req.params;
+  console.log(searchValue);
+
   try {
-    const alias = req.params.alias;
-    console.log("Valor del alias:", alias);
+    const user = await sequelize.query(
+      `
+      SELECT DISTINCT *
+      FROM users
+      WHERE alias LIKE '%${searchValue}%' OR name LIKE '%${searchValue}%' OR surname LIKE '%${searchValue}%'
+      `,
+      {
+        type: sequelize.QueryTypes.SELECT,
+      }
+    );
 
-    const query = `SELECT * FROM users WHERE alias LIKE '${alias}%'`;
-    console.log(query);
-    const result = await sequelize.query(query, {
-      type: sequelize.QueryTypes.SELECT,
-    });
-
-    res.json(result);
+    res.json(user);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Error al ejecutar la consulta" });
   }
 });
+
+
+
+
+
+
+
 
 //Inicio del servidor
 app.listen(3000, function () {
